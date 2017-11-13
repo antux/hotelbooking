@@ -3,17 +3,16 @@
 
 API para la gestión de habitaciones de hoteles en un país.
 
+#### Tecnologias:
+- NodeJS + ExpressJS
+- Mongodb + Mongoose
+
 #### Modelos de Datos:
 - Departamentos y Ciudades (departments).
 - Hoteles (hotels).
 - Habitaciones (rooms).
 - Reserva de habitaciones (bookings).
 - Usuarios.
-
-#### Clonar
-~~~ bash
-  git clone ruta
-~~~
 
 #### Instalar dependencias
 ~~~ bash
