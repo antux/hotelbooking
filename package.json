@@ -1,0 +1,27 @@
+{
+  "name": "hotel-guarumo",
+  "version": "1.0.0",
+  "description": "Api para la gestión de habitaciones de hoteles",
+  "main": "server.js",
+  "scripts": {
+    "populate-db": "node scripts/populate-db.js && exit 1",
+    "clean-db": "node scripts/clean-db && exit 1",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Antony Petrocelli",
+  "email": "petrocellia@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "acl": "^0.4.11",
+    "acl-mem-regexp": "^0.2.0",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "jsonwebtoken": "^8.1.0",
+    "moment": "^2.19.1",
+    "mongoose": "^4.13.1"
+  },
+  "devDependencies": {
+    "morgan": "^1.9.0"
+  }
+}
