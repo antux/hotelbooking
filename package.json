@@ -6,6 +6,7 @@
   "scripts": {
     "populate-db": "node scripts/populate-db.js && exit 1",
     "clean-db": "node scripts/clean-db && exit 1",
+    "start": "node server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Antony Petrocelli",
