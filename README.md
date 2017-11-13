@@ -30,6 +30,11 @@ API para la gestión de habitaciones de hoteles en un país.
   npm run clean-db
 ~~~
 
+#### Ejecutar servidor
+~~~ bash
+  npm run start
+~~~
+
 #### Rutas:
 
 - **Departments**
