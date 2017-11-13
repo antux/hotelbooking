@@ -34,7 +34,7 @@ function init(app) {
 		toJSON: {virtuals: true}		
 	});
 	
-	// indice compuesto para todos los campos de texto de la coleccion usuario
+	// indice compuesto para todos los campos de texto de la coleccion room
 	RoomSchema.index({room_type:'text', number:'text'}, {default_language:'spanish'});
 
 	app.models.Room = app.db.adapter.model('Room', RoomSchema);
