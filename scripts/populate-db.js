@@ -31,7 +31,7 @@ const users = [
     first_name:'client',
     last_name:'client',
     password:'$2a$10$KtZp92o.wbOnenDt/sT9Ku8MFITzH8mSW0xLnQnD3yUUKm1vD4dT.',
-    email:'client@hotelguarumo.com',
+    email:'client@nada.com',
     role:'client',
     is_authenticated:true
   },
@@ -40,7 +40,7 @@ const users = [
     first_name:'mantenedor',
     last_name:'mantenedor',
     password:'$2a$10$KtZp92o.wbOnenDt/sT9Ku8MFITzH8mSW0xLnQnD3yUUKm1vD4dT.',
-    email:'mantenedor@hotelguarumo.com',
+    email:'mantenedor@nada.com',
     role:'mantenedor',
     is_authenticated:true
   },
@@ -49,7 +49,7 @@ const users = [
     first_name:'administrador',
     last_name:'administrador',
     password:'$2a$10$KtZp92o.wbOnenDt/sT9Ku8MFITzH8mSW0xLnQnD3yUUKm1vD4dT.',
-    email:'administrador@hotelguarumo.com',
+    email:'administrador@nada.com',
     role:'administrador',
     is_authenticated:true
   }
