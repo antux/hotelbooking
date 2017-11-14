@@ -24,6 +24,11 @@ API para la gestión de habitaciones de hoteles en un país.
   npm run populate-db
 ~~~
 
+#Entre otros datos, este comando crearalos siguiestes usuarios:
+- client@nada.com, pass: admin. Es un usuario final, solo puede consultar su información persona, gestionar reservas.
+- mantenedor@nada.com, pass: admin. 
+- administrador@nada.com, pass: admin 
+
 #### Eliminar datos
 ~~~ bash
   npm run clean-db
@@ -60,6 +65,19 @@ API para la gestión de habitaciones de hoteles en un país.
   [POST]  /hotels
 
   Agregar un hotel.
+
+  ~~~ js
+        datos de entrada:
+          { 
+            "name":"Botalon Hotel",
+            "stars":4,
+            "location":{
+              "department_id":"5a05ef08660f0e47efa73347",
+              "city_id":"5a08d39e1303c920ec6463af",
+              "address":""
+            }
+          }
+  ~~~
 
   [GET]   /hotels
 
@@ -142,8 +160,8 @@ API para la gestión de habitaciones de hoteles en un país.
    ~~~ js
         datos de entrada:
             {
-              "first_name": "Antony",
-              "last_name": "Gonzalez",
+              "first_name": "Usuario",
+              "last_name": "Final",
             }
   ~~~
 
@@ -158,9 +176,9 @@ API para la gestión de habitaciones de hoteles en un país.
   ~~~ js
         datos de entrada:
             {
-              "first_name": "Antony",
-              "last_name": "Petrocelli",
-              "email": "petrocellia@gmail.com",
+              "first_name": "Client",
+              "last_name": "Client",
+              "email": "client@nada.com",
               "password": "admin"
             }
   ~~~
@@ -174,7 +192,7 @@ API para la gestión de habitaciones de hoteles en un país.
   ~~~js
         datos de entrada:
             {
-              "email": "client@hotelguarumo.com",
+              "email": "client@nada.com",
               "password": "admin"
             }
   ~~~
