@@ -13,16 +13,21 @@ const Service = (function () {
   // metodo para crear un hotel
   Service.prototype.create = function (input, cb) {
     const app = this.app;
-    const Hotel = new app.models.Hotel(input);
 
-    const validation = Hotel.validateSync();
-    if(!validation) cb({status:400, message:validation},null);
-
-    Hotel.save()
+    app.models.Department.findOne({'_id':input.location.department_id, cities:{$elemMatch:{_id:input.location.city_id}}})
+    .select('name cities.$')
+    .then((department) =>{
+      console.log(department);
+      if(!department) throw '¡El departamento y la ciudad ingresados no existen!';
+      input.location.department_name = department.name;
+      input.location.city_name = department.cities[0].name;
+      return new app.models.Hotel(input).save()
+    })
     .then((hotel) => {
       cb(null, hotel);
     })
     .catch((err) =>{
+      console.log(err);
       cb({status:400, message:err});
     })
   }
@@ -38,6 +43,21 @@ const Service = (function () {
     .then((response) => {
       if(response.n == 0) throw "¡El hotel no existe!"
       cb(null, {message:'Hotel actualizado satisfactoriamente'});
+    })
+    .catch((err) =>{
+      cb({status:400, message:err});
+    })
+  }
+
+  // metodo para consultar la información de un hotel
+  Service.prototype.getOne = function (hotel_id, input, cb) {
+    const app = this.app;
+  
+    app.models.Hotel.findOne({_id:user_id})
+    .exec()
+    .then((hotel) => {
+      if(!hotel) throw "¡El hotel no existe!"
+      cb(null, hotel);
     })
     .catch((err) =>{
       cb({status:400, message:err});
