@@ -166,7 +166,7 @@ const Service = (function () {
       hotels.forEach((book) =>{
         hotels_id.push(book.hotel_id);
       })
-        return app.models.Hotel.find({_id:{$in:hotels_id}})
+        return app.models.Hotel.find({_id:{$nin:hotels_id}})
         .then((hotels) => {
           console.log('hotels: ',hotels);
           return {hotels:hotels, bookings:bookings[1]};
@@ -177,7 +177,8 @@ const Service = (function () {
         const hotels = result.hotels;
         const bookings = result.bookings;
         hotels.forEach((hotel, index) => {
-          const available_rooms = hotel.rooms.length - bookings[index].count;
+          let count = (bookings.length > 0)? bookings[index].count:[];
+          const available_rooms = hotel.rooms.length - count;
           console.log('available_rooms: ', available_rooms);
           if (available_rooms > 0){
             final_hotels.push({hotel:hotel, available_rooms:available_rooms});
